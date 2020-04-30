@@ -39,8 +39,8 @@ class ExporterMain {
 
     private fun handleRequest(exchange: HttpExchange) {
       var body = ""
-      body += "packet_loss\t" + collector.packetLoss + "\r\n"
-      body += "average_time\t" + collector.averageTime + "\r\n"
+      body += "packet_loss\t" + collector.packetLoss + "\n"
+      body += "average_time\t" + collector.averageTime + "\n"
       val response = body.toByteArray()
       exchange.sendResponseHeaders(200, response.size.toLong()) //response code and length
       val os = exchange.responseBody

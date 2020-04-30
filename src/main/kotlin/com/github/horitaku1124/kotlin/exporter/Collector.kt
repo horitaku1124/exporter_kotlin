@@ -7,7 +7,7 @@ class Collector: java.lang.Thread() {
   var packetLoss = 0.0
   var averageTime = 0.0
   override fun run() {
-    val command = listOf("/bin/bash", "-c", "ping yahoo.co.jp -c 4 -i 3")
+    val command = listOf("ping", "yahoo.co.jp", "-c", "3")
 
     while (true) {
       var child = ProcessBuilder(command)
@@ -63,7 +63,7 @@ class Collector: java.lang.Thread() {
         print("averageTime=" + averageTime)
       }
       println()
-      sleep(1000)
+      sleep(3000)
     }
   }
 }
